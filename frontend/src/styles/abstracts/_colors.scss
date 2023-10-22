@@ -1,0 +1,19 @@
+@use "sass:string";
+
+
+
+$colors-list: (
+  "text-light": #c5c6c7,
+  "primary-light": #804b9b,
+  "primary-dark": #291d30
+);
+
+
+
+@function color($name) {
+  @if not (map-get($colors-list, $name)) {
+    @warn "#{$name} is not a valid color.";
+    @return #000;
+  }
+  @return map-get($colors-list, $name);
+}

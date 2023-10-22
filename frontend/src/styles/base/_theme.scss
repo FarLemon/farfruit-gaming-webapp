@@ -1,0 +1,25 @@
+@import "@styles/abstracts/colors";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+body {
+  color: color("text-light");
+  background-color: #444444;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+:focus-visible {
+  outline-offset: 0.25em;
+  outline: solid 0.15em color("text-light");
+  border-radius: 0.1em;
+  z-index: 1000;
+}
