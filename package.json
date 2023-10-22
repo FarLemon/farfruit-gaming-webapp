@@ -1,0 +1,21 @@
+{
+    "name": "farfruit-gaming",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy:staging": "firebase use farfruit-gaming && cd frontend && npm run build:staging && cd .. && firebase deploy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FarLemon/farfruit-gaming-webapp.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/FarLemon/farfruit-gaming-webapp/issues"
+    },
+    "homepage": "https://github.com/FarLemon/farfruit-gaming-webapp#readme"
+}

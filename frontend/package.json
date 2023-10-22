@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
+    "dev": "vite --mode staging --host",
     "build": "vite build",
+    "build:staging": "vite build --mode staging",
     "serve": "vite preview"
   },
   "license": "MIT",
