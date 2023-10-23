@@ -1,25 +1,20 @@
 @import "@styles/abstracts/colors";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Roboto&display=swap');
 
 
 
 body {
-  color: color("text-light");
-  background-color: #444444;
-  font-family: 'Roboto', sans-serif;
+  color: color("white-tufts");
+  background-color: color("black-rose");
+  font-family: 'DM Sans', sans-serif;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
+
 
 :focus-visible {
   outline-offset: 0.25em;
-  outline: solid 0.15em color("text-light");
+  outline: solid 0.15em color("white-tufts");
   border-radius: 0.1em;
   z-index: 1000;
 }
