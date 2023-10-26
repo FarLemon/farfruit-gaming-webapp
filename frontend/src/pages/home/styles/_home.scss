@@ -14,6 +14,7 @@
 
 header {
     width: 100%;
+    max-width: 1600px;
     font-size: 2.5em;
     font-weight: 800;
 }
@@ -22,6 +23,7 @@ header {
 
 .content {
     width: 100%;
+    max-width: 1600px;
     min-height: 50vh;
     padding: 2em;
     display: grid;
