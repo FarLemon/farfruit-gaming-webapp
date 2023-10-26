@@ -1,0 +1,44 @@
+@use 'sass:color';
+
+@import "@styles/abstracts/colors";
+
+
+
+.grounded {
+    padding: 3em 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+
+
+header {
+    width: 100%;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+
+
+.content {
+    width: 100%;
+    min-height: 50vh;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(color.adjust(color("grounded-primary"), $lightness: -35%), 0.9);
+    border-radius: 1em;
+
+    a {color: color("rose");text-decoration: none;}
+
+    p {
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 1.25em;
+    }
+}

@@ -24,7 +24,9 @@
     $icon-color-fill: color("white-tufts");
     $icon-color-background: color("rose");
 
-    height: 100%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     padding: 1.5em 0.5em;
     grid-area: pageSelect;
     display: flex;

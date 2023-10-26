@@ -1,5 +1,5 @@
 import { Routes, Route } from "@solidjs/router";
-import { Component } from 'solid-js';
+import { lazy, Component } from 'solid-js';
 
 import '@styles/_global.scss'
 import '@/App.scss';
@@ -7,8 +7,10 @@ import '@/App.scss';
 import FarFruitLogo from "@assets/icons/FarFruitLogo";
 import GroundedLogo from '@assets/icons/groundedLogo';
 
-import Home from "@pages/home/Home";
-import Grounded from "@pages/grounded/Grounded";
+const Home = lazy(()=> import("@pages/home/Home"));
+const Grounded = lazy(()=> import("@pages/grounded/Grounded"));
+
+
 
 
 
