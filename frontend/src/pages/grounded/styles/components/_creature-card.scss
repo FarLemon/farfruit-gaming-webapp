@@ -1,0 +1,154 @@
+@use 'sass:color';
+
+@import "@styles/abstracts/colors";
+
+
+
+.creature-card {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    width: 20em;
+    min-width: min-content;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: color('grounded-primary');
+    border-radius: 0.5em;
+    outline: solid 0.15em color('grounded-primary');
+
+
+
+    &__header {
+        padding: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > h1 {font-size: 1.25em}
+        > img {width: 3em; height: 3em}
+    }
+
+
+
+    &__content {
+        .module {
+            display: grid;
+            grid-template-rows: auto 0fr;
+            border-top: solid 0.15em color.adjust(color('grounded-primary'), $lightness: -35%);
+            transition: all 500ms ease, border 300ms 100ms linear;
+
+            > div {overflow: hidden;}
+            &.openned {grid-template-rows: auto 1fr;.header svg {transform: rotateX(180deg)}}
+
+
+
+            .header {
+                font-size: 1.1em;
+                padding: 0.25em;
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-columns: 1fr auto;
+                place-items: center;
+
+                svg {
+                    transition-duration: 500ms;
+                    transition-timing-function: ease;
+                }
+            }
+
+
+
+            &#stats .data {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 0.15em;
+                text-align: center;
+                font-style: italic;
+
+                section {
+                    padding: 0.5em;
+                    display: grid;
+                    place-items: center;
+                    grid-template-rows: auto 1fr;
+                    gap: 0.5em;
+                    background-color: color.adjust(color('grounded-primary'), $lightness: -35%);
+                    h3 {border-bottom: solid 0.15em color('grounded-primary');padding: 0.15em 0.25em}
+                    p, div {font-size: 0.9em;font-weight: 400}
+
+
+                }
+            }
+
+
+
+            &#modifiers .data {
+                display: grid;
+                gap: 0.15em;
+                text-align: center;
+
+
+                > div {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0.15em;
+                    font-weight: 400;
+
+                    h3 {
+                        padding: 0.5em;
+                        grid-column: span 2;
+                        background-color: color.adjust(color('grounded-primary'), $lightness: -35%);
+                    }
+
+                    section {
+                        padding: 0.5em;
+                        display: grid;
+                        grid-template-rows: auto 1fr;
+                        place-items: center;
+                        gap: 0.5em;
+                        background-color: color.adjust(color('grounded-primary'), $lightness: -35%);
+                        &:only-of-type {grid-column: span 2;}
+
+                        h4 {
+                            padding: 0.15em 0.25em;
+                            border-bottom: solid 0.15em color('grounded-primary');
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-evenly;
+                            gap: 1em;
+
+                            img {width: 2em; height: 2em}
+                            p:nth-of-type(1) {font-size: 0.5em}
+                            p:nth-of-type(2) {font-size: 0.9em}
+                            > div {flex-basis: 30%}
+                        }
+                    }
+
+                    &#alternate {
+                        section {
+                            padding: 0;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.15em;
+                            background-color: color('grounded-primary');
+
+                            > div {
+                                align-self: stretch;
+                                flex-grow: 1;
+                                display: grid;
+                                grid-template-rows: auto 1fr;
+                                gap: 0.5em;
+                                padding: 0.5em;
+                                background-color: color.adjust(color('grounded-primary'), $lightness: -35%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
