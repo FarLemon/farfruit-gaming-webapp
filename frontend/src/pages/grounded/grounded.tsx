@@ -14,7 +14,7 @@ const Grounded: Component = () => {
 
   // Creature State
   const [creatures, setCreatures] = createSignal<Creature[]>([]);
-  const [selectedLetter, setSelectedLetter] = createSignal<string | null>(null);
+  const [selectedLetter, setSelectedLetter] = createSignal<string | null | undefined>(undefined);
 
   const [lastDoc, setLastDoc] = createSignal<QueryDocumentSnapshot<DocumentData> | null>(null);
 
