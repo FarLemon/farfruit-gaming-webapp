@@ -1,0 +1,106 @@
+@use 'sass:color';
+
+@import "@styles/abstracts/colors";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Roboto&display=swap');
+
+
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "pageSelect page"
+        "pageSelect footer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    color: color("white-rose");
+    background-color: color.adjust(color("tufts"), $lightness: -20%);
+}
+
+
+
+.pageSelect {
+    $background-color: color("black-rose");
+    $icon-color-fill: color("white-tufts");
+    $icon-color-background: color("rose");
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 1.5em 0.5em;
+    grid-area: pageSelect;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    color: color("white-tufts");
+    background: $background-color;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    z-index: 10;
+
+    #farfruitLogo {
+        width: 3em;
+        height: 3em;
+    }
+
+    svg {
+        transition-duration: 100ms;
+        animation-timing-function: ease;
+        &:hover {transform: scale(1.1);}
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+
+        li {
+            a  {
+                position: relative;
+                display: flex;
+                align-items: center;
+                color: $icon-color-fill;
+
+                svg {
+                    width: 2em;
+                    height: 2em;
+                    path {fill: $icon-color-fill;stroke-width: 0}
+                    circle {fill: $icon-color-background;stroke-width: 0}
+                }
+                p {
+                    position: absolute;
+                    visibility: hidden;
+                    text-align: center;
+                    line-height: 2.5em;
+                    width: 0;
+                    height: 2.5em;
+                    padding: 0;
+                    overflow: hidden;
+                    left: 3em;
+                    border-top-right-radius: 0.5em;
+                    border-bottom-right-radius: 0.5em;
+                    background: $background-color;
+                    transition-property: all;
+                    transition-duration: 100ms;
+                }
+                svg:hover + p {visibility: visible;width: 7em;}
+            }
+        }
+    }
+}
+
+
+
+.page {grid-area: page; width: 100%}
+
+
+
+.footer {
+    font-size: 0.8em;
+    margin-top: auto;
+    grid-area: footer;
+    padding: 1.5em;
+    text-align: center;
+    background-color: color("black-rose");
+}

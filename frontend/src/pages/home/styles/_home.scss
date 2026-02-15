@@ -1,0 +1,41 @@
+@import "@styles/abstracts/colors";
+
+
+
+.home {
+    padding: 3em 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+
+
+header {
+    width: 100%;
+    max-width: 1600px;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+
+
+.content {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 50vh;
+    padding: 2em;
+    display: grid;
+    place-content: center;
+    background-color: rgba(color("black-tufts"), 0.8);
+    border-radius: 1em;
+
+    a {color: color("rose");text-decoration: none;}
+
+    p {
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 1.25em;
+    }
+}

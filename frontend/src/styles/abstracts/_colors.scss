@@ -1,0 +1,26 @@
+@use "sass:string";
+
+
+
+$colors-list: (
+  "white-tufts": #F2F9FF,
+  "pale-tufts": #DfE6EC,
+  "tufts": #3E78B3,
+  "black-tufts": #030E1A,
+  "white-rose": #FFF2F7,
+  "pale-rose": #EDDfE4,
+  "rose": #B33E65,
+  "black-rose": #1A030B,
+
+  "grounded-primary": #804b9b,
+);
+
+
+
+@function color($name) {
+  @if not (map-get($colors-list, $name)) {
+    @warn "#{$name} is not a valid color.";
+    @return #000;
+  }
+  @return map-get($colors-list, $name);
+}
